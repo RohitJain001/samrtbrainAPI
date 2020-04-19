@@ -1,10 +1,10 @@
 
-const handleProfileGet = (req,res,db)=>{
+const handleProfileGet=(req,res,db)=>{
     const { id }=req.params;
     db.select('*').from('allusers').where({
         id:id
     })
-    .then(user => {
+    .then(user=>{
         if(user.length)
         {res.json(user[0])}
         else{
@@ -15,6 +15,6 @@ const handleProfileGet = (req,res,db)=>{
     })
 }
 
-module.exports = {
+module.exports={
     handleProfileGet : handleProfileGet
 }
