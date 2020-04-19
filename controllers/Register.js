@@ -19,7 +19,6 @@ const handleRegister=(req, res, db,passwordHash) =>{
             .insert({
                name:name,
                email:loginEmail[0],
-               entries :0,
                joined : new Date()
             })
             .then (user => {res.json(user[0])})
