@@ -8,12 +8,12 @@ const signin = require('./controllers/Signin');
 const profile = require('./controllers/Profile');
 const image = require('./controllers/Image');
 
-var connectionString = "postgres://*POSTGRES*:*POSTGRES*@*HOST*:*38212*/*SMART*"
+//var connectionString = "postgres://*USERNAME*:*PASSWORD*@*HOST*:*PORT*/*DATABASE*"
 
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString: connectionString,
+      connectionString: process.env.DATABASE_URL,
       ssl: true,
     }
   })
