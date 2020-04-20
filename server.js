@@ -8,7 +8,7 @@ const signin = require('./controllers/Signin');
 const profile = require('./controllers/Profile');
 const image = require('./controllers/Image');
 
-var connectionString = "postgres://*USERNAME*:*PASSWORD*@*HOST*:*PORT*/*DATABASE*"
+var connectionString = "postgres://*POSTGRES*:*POSTGRES*@*HOST*:*38212*/*SMART*"
 
 const db = knex({
     client: 'pg',
