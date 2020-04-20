@@ -3,20 +3,21 @@ const bodyParser = require('body-parser');
 var passwordHash = require('password-hash');
 const cors = require('cors');
 var knex = require('knex');
-
 const register = require('./controllers/Register');
 const signin = require('./controllers/Signin');
 const profile = require('./controllers/Profile');
 const image = require('./controllers/Image');
 
+var connectionString = "postgres://*USERNAME*:*PASSWORD*@*HOST*:*PORT*/*DATABASE*"
 
 const db = knex({
     client: 'pg',
     connection: {
-      connectionString: process.env.DATABASE_URL,
+      connectionString: connectionString,
       ssl: true,
     }
-  });
+  })
+
 const app=express();
 
 app.use(bodyParser.json());
